@@ -1,0 +1,1508 @@
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[main]	INFO	running on Python 3.9.6
+Run started:2025-03-20 05:06:56.379494
+
+Test results:
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/config_flow.py:2047:12
+2046	                continue
+2047	            except Exception:
+2048	                pass
+2049	            try:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/config_flow.py:2057:12
+2056	                    continue
+2057	            except Exception:
+2058	                pass
+2059	            invalid_list.append(addr)
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak SHA1 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/common.py:66:11
+65	    """Calculate the group ID based on a user ID and a home ID."""
+66	    return hashlib.sha1(
+67	        f'{uid}central_service{home_id}'.encode('utf-8')).hexdigest()[:16]
+68	
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b506_yaml_load.html
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/common.py:79:15
+78	    with open(yaml_file, 'r', encoding='utf-8') as f:
+79	        return yaml.load(f, Loader=yaml.FullLoader)
+80	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/common.py:84:36
+83	    """Randomize an integer value."""
+84	    return int(value * (1 - ratio + random.random()*2*ratio))
+85	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/common.py:88:32
+87	    """Randomize a float value."""
+88	    return value * (1 - ratio + random.random()*2*ratio)
+89	
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak SHA1 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_cloud.py:103:22
+102	        self._device_id = f'ha.{uuid}'
+103	        self._state = hashlib.sha1(
+104	            f'd={self._device_id}'.encode('utf-8')).hexdigest()
+105	        self._session = aiohttp.ClientSession(loop=self._main_loop)
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: ''
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_cloud.py:253:29
+252	        self._client_id = ''
+253	        self._access_token = ''
+254	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_network.py:54:0
+53	from enum import Enum, auto
+54	import subprocess
+55	from typing import Callable, Coroutine, Optional
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_network.py:303:8
+302	                return self._main_loop.time() - start_ts
+303	        except Exception:  # pylint: disable=broad-exception-caught
+304	            pass
+305	        return self._DETECT_TIMEOUT
+
+--------------------------------------------------
+>> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b310-urllib-urlopen
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_spec.py:598:13
+597	        content: bytes = None
+598	        with urlopen(request) as response:
+599	            content = response.read()
+
+--------------------------------------------------
+>> Issue: [B303:blacklist] Use of insecure MD2, MD4, MD5, or SHA1 hash function.
+   Severity: Medium   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b303-md5
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_storage.py:717:32
+716	    def __did_hash(self, did: str) -> str:
+717	        sha1_hash = hashes.Hash(hashes.SHA1(), backend=default_backend())
+718	        sha1_hash.update(did.encode('utf-8'))
+
+--------------------------------------------------
+>> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b310-urllib-urlopen
+   Location: ./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_storage.py:1028:17
+1027	            content: bytes = None
+1028	            with urlopen(request) as response:
+1029	                content = response.read()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:192:4
+191	    data: dict = load_json_file(SPEC_BOOL_TRANS_FILE)
+192	    assert data, f'load {SPEC_BOOL_TRANS_FILE} failed'
+193	    assert bool_trans(data), f'{SPEC_BOOL_TRANS_FILE} format error'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:193:4
+192	    assert data, f'load {SPEC_BOOL_TRANS_FILE} failed'
+193	    assert bool_trans(data), f'{SPEC_BOOL_TRANS_FILE} format error'
+194	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:199:4
+198	    data: dict = load_json_file(SPEC_FILTER_FILE)
+199	    assert data, f'load {SPEC_FILTER_FILE} failed'
+200	    assert spec_filter(data), f'{SPEC_FILTER_FILE} format error'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:200:4
+199	    assert data, f'load {SPEC_FILTER_FILE} failed'
+200	    assert spec_filter(data), f'{SPEC_FILTER_FILE} format error'
+201	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:206:4
+205	    data: dict = load_json_file(SPEC_MULTI_LANG_FILE)
+206	    assert data, f'load {SPEC_MULTI_LANG_FILE} failed'
+207	    assert nested_3_dict_str_str(data), f'{SPEC_MULTI_LANG_FILE} format error'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:207:4
+206	    assert data, f'load {SPEC_MULTI_LANG_FILE} failed'
+207	    assert nested_3_dict_str_str(data), f'{SPEC_MULTI_LANG_FILE} format error'
+208	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:215:8
+214	        data: dict = load_json_file(file_path)
+215	        assert data, f'load {file_path} failed'
+216	        assert nested_3_dict_str_str(data), f'{file_path} format error'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:216:8
+215	        assert data, f'load {file_path} failed'
+216	        assert nested_3_dict_str_str(data), f'{file_path} format error'
+217	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:224:8
+223	        data: dict = load_json_file(file_path)
+224	        assert data, f'load {file_path} failed'
+225	        assert dict_str_dict(data), f'{file_path} format error'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:225:8
+224	        assert data, f'load {file_path} failed'
+225	        assert dict_str_dict(data), f'{file_path} format error'
+226	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:235:4
+234	    translations_names: set[str] = set(listdir(TRANS_RELATIVE_PATH))
+235	    assert len(translations_names) == len(integration_lang_list)
+236	    assert translations_names == set(integration_lang_list)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:236:4
+235	    assert len(translations_names) == len(integration_lang_list)
+236	    assert translations_names == set(integration_lang_list)
+237	    i18n_names: set[str] = set(listdir(MIOT_I18N_RELATIVE_PATH))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:238:4
+237	    i18n_names: set[str] = set(listdir(MIOT_I18N_RELATIVE_PATH))
+238	    assert len(i18n_names) == len(translations_names)
+239	    assert i18n_names == translations_names
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:239:4
+238	    assert len(i18n_names) == len(translations_names)
+239	    assert i18n_names == translations_names
+240	    bool_trans_data: set[str] = load_json_file(SPEC_BOOL_TRANS_FILE)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:243:4
+242	        bool_trans_data['translate']['default'].keys())
+243	    assert len(bool_trans_names) == len(translations_names)
+244	    # Check translation files structure
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:253:12
+252	                'compare_dict_structure failed /translations, %s', name)
+253	            assert False
+254	    # Check i18n files structure
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:263:12
+262	                'compare_dict_structure failed /miot/i18n, %s', name)
+263	            assert False
+264	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:271:4
+270	    sort_langs: dict = dict(sorted(INTEGRATION_LANGUAGES.items()))
+271	    assert list(INTEGRATION_LANGUAGES.keys()) == list(sort_langs.keys()), (
+272	        'INTEGRATION_LANGUAGES not sorted, correct order\r\n'
+273	        f'{list(sort_langs.keys())}')
+274	    assert json.dumps(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:274:4
+273	        f'{list(sort_langs.keys())}')
+274	    assert json.dumps(
+275	        load_json_file(file_path=SPEC_BOOL_TRANS_FILE)) == json.dumps(
+276	            sort_bool_trans(file_path=SPEC_BOOL_TRANS_FILE)), (
+277	                f'{SPEC_BOOL_TRANS_FILE} not sorted, goto project root path'
+278	                ' and run the following command sorting, ',
+279	                'pytest -s -v -m update ./test/check_rule_format.py')
+280	    assert json.dumps(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:280:4
+279	                'pytest -s -v -m update ./test/check_rule_format.py')
+280	    assert json.dumps(
+281	        load_json_file(file_path=SPEC_MULTI_LANG_FILE)) == json.dumps(
+282	            sort_multi_lang(file_path=SPEC_MULTI_LANG_FILE)), (
+283	                f'{SPEC_MULTI_LANG_FILE} not sorted, goto project root path'
+284	                ' and run the following command sorting, ',
+285	                'pytest -s -v -m update ./test/check_rule_format.py')
+286	    assert json.dumps(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/check_rule_format.py:286:4
+285	                'pytest -s -v -m update ./test/check_rule_format.py')
+286	    assert json.dumps(
+287	        load_json_file(file_path=SPEC_FILTER_FILE)) == json.dumps(
+288	            sort_spec_filter(file_path=SPEC_FILTER_FILE)), (
+289	                f'{SPEC_FILTER_FILE} not sorted, goto project root path'
+290	                ' and run the following command sorting, ',
+291	                'pytest -s -v -m update ./test/check_rule_format.py')
+292	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:52:8
+51	        auth_url: str = miot_oauth.gen_auth_url()
+52	        assert isinstance(auth_url, str)
+53	        _LOGGER.info('auth url: %s', auth_url)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:57:8
+56	        code: str = input('input code: ')
+57	        assert code is not None
+58	        # get access_token
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:60:8
+59	        res_obj = await miot_oauth.get_access_token_async(code=code)
+60	        assert res_obj is not None
+61	        oauth_info = res_obj
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:65:8
+64	            test_domain_oauth2, test_cloud_server, oauth_info)
+65	        assert rc
+66	        _LOGGER.info('save oauth info')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:69:8
+68	            test_domain_oauth2, test_name_uuid, uuid)
+69	        assert rc
+70	        _LOGGER.info('save uuid')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:73:4
+72	    access_token = oauth_info.get('access_token', None)
+73	    assert isinstance(access_token, str)
+74	    _LOGGER.info('access_token: %s', access_token)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:76:4
+75	    refresh_token = oauth_info.get('refresh_token', None)
+76	    assert isinstance(refresh_token, str)
+77	    _LOGGER.info('refresh_token: %s', refresh_token)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:99:4
+98	        domain=test_domain_oauth2, name=test_name_uuid, type_=str)
+99	    assert isinstance(uuid, str)
+100	    oauth_info = await miot_storage.load_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:102:4
+101	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+102	    assert isinstance(oauth_info, dict)
+103	    assert 'access_token' in oauth_info
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:103:4
+102	    assert isinstance(oauth_info, dict)
+103	    assert 'access_token' in oauth_info
+104	    assert 'refresh_token' in oauth_info
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:104:4
+103	    assert 'access_token' in oauth_info
+104	    assert 'refresh_token' in oauth_info
+105	    assert 'expires_ts' in oauth_info
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:105:4
+104	    assert 'refresh_token' in oauth_info
+105	    assert 'expires_ts' in oauth_info
+106	    remaining_time = oauth_info['expires_ts'] - int(time.time())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:115:4
+114	    refresh_token = oauth_info.get('refresh_token', None)
+115	    assert refresh_token
+116	    update_info = await miot_oauth.refresh_access_token_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:118:4
+117	        refresh_token=refresh_token)
+118	    assert update_info
+119	    assert 'access_token' in update_info
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:119:4
+118	    assert update_info
+119	    assert 'access_token' in update_info
+120	    assert 'refresh_token' in update_info
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:120:4
+119	    assert 'access_token' in update_info
+120	    assert 'refresh_token' in update_info
+121	    assert 'expires_ts' in update_info
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:121:4
+120	    assert 'refresh_token' in update_info
+121	    assert 'expires_ts' in update_info
+122	    remaining_time = update_info['expires_ts'] - int(time.time())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:123:4
+122	    remaining_time = update_info['expires_ts'] - int(time.time())
+123	    assert remaining_time > 0
+124	    _LOGGER.info('refresh token, remaining valid time: %ss', remaining_time)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:128:4
+127	        test_domain_oauth2, test_cloud_server, update_info)
+128	    assert rc
+129	    _LOGGER.info('refresh token success, %s', update_info)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:148:4
+147	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+148	    assert isinstance(oauth_info, dict) and 'access_token' in oauth_info
+149	    miot_http = MIoTHttpClient(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:155:4
+154	    user_info = await miot_http.get_user_info_async()
+155	    assert isinstance(user_info, dict) and 'miliaoNick' in user_info
+156	    nickname = user_info['miliaoNick']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:177:4
+176	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+177	    assert isinstance(oauth_info, dict) and 'access_token' in oauth_info
+178	    miot_http = MIoTHttpClient(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:183:4
+182	    uid = await miot_http.get_uid_async()
+183	    assert isinstance(uid, str)
+184	    _LOGGER.info('your uid: %s', uid)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:189:4
+188	        name=f'uid_{test_cloud_server}', data=uid)
+189	    assert rc
+190	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:209:4
+208	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+209	    assert isinstance(oauth_info, dict) and 'access_token' in oauth_info
+210	    miot_http = MIoTHttpClient(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:216:4
+215	    homeinfos = await miot_http.get_homeinfos_async()
+216	    assert isinstance(homeinfos, dict)
+217	    assert 'uid' in homeinfos and isinstance(homeinfos['uid'], str)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:217:4
+216	    assert isinstance(homeinfos, dict)
+217	    assert 'uid' in homeinfos and isinstance(homeinfos['uid'], str)
+218	    assert 'home_list' in homeinfos and isinstance(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:218:4
+217	    assert 'uid' in homeinfos and isinstance(homeinfos['uid'], str)
+218	    assert 'home_list' in homeinfos and isinstance(
+219	        homeinfos['home_list'], dict)
+220	    assert 'share_home_list' in homeinfos and isinstance(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:220:4
+219	        homeinfos['home_list'], dict)
+220	    assert 'share_home_list' in homeinfos and isinstance(
+221	        homeinfos['share_home_list'], dict)
+222	    # Get uid
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:228:4
+227	        name=f'uid_{test_cloud_server}', type_=str)
+228	    assert uid == uid2
+229	    _LOGGER.info('your uid: %s', uid)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:255:4
+254	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+255	    assert isinstance(oauth_info, dict) and 'access_token' in oauth_info
+256	    miot_http = MIoTHttpClient(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:262:4
+261	    devices = await miot_http.get_devices_async()
+262	    assert isinstance(devices, dict)
+263	    assert 'uid' in devices and isinstance(devices['uid'], str)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:263:4
+262	    assert isinstance(devices, dict)
+263	    assert 'uid' in devices and isinstance(devices['uid'], str)
+264	    assert 'homes' in devices and isinstance(devices['homes'], dict)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:264:4
+263	    assert 'uid' in devices and isinstance(devices['uid'], str)
+264	    assert 'homes' in devices and isinstance(devices['homes'], dict)
+265	    assert 'devices' in devices and isinstance(devices['devices'], dict)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:265:4
+264	    assert 'homes' in devices and isinstance(devices['homes'], dict)
+265	    assert 'devices' in devices and isinstance(devices['devices'], dict)
+266	    # Compare uid with uid in storage
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:271:4
+270	        name=f'uid_{test_cloud_server}', type_=str)
+271	    assert uid == uid2
+272	    _LOGGER.info('your uid: %s', uid)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:283:4
+282	        name=f'homes_{test_cloud_server}', data=homes)
+283	    assert rc
+284	    rc = await miot_storage.save_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:287:4
+286	        name=f'devices_{test_cloud_server}', data=devices)
+287	    assert rc
+288	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:307:4
+306	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+307	    assert isinstance(oauth_info, dict) and 'access_token' in oauth_info
+308	    miot_http = MIoTHttpClient(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:316:4
+315	        name=f'devices_{test_cloud_server}', type_=dict)
+316	    assert isinstance(local_devices, dict)
+317	    did_list = list(local_devices.keys())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:318:4
+317	    did_list = list(local_devices.keys())
+318	    assert len(did_list) > 0
+319	    # Get device with dids
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:323:4
+322	        dids=test_list)
+323	    assert isinstance(devices_info, dict)
+324	    _LOGGER.info('test did list, %s, %s', len(test_list), test_list)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:346:4
+345	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+346	    assert isinstance(oauth_info, dict) and 'access_token' in oauth_info
+347	    miot_http = MIoTHttpClient(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:355:4
+354	        name=f'devices_{test_cloud_server}', type_=dict)
+355	    assert isinstance(local_devices, dict)
+356	    did_list = list(local_devices.keys())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:357:4
+356	    did_list = list(local_devices.keys())
+357	    assert len(did_list) > 0
+358	    # Get prop
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:383:4
+382	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+383	    assert isinstance(oauth_info, dict) and 'access_token' in oauth_info
+384	    miot_http = MIoTHttpClient(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:392:4
+391	        name=f'devices_{test_cloud_server}', type_=dict)
+392	    assert isinstance(local_devices, dict)
+393	    did_list = list(local_devices.keys())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:394:4
+393	    did_list = list(local_devices.keys())
+394	    assert len(did_list) > 0
+395	    # Get props
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:426:4
+425	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+426	    assert isinstance(oauth_info, dict) and 'access_token' in oauth_info
+427	    miot_http = MIoTHttpClient(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:435:4
+434	        name=f'devices_{test_cloud_server}', type_=dict)
+435	    assert isinstance(local_devices, dict)
+436	    assert len(local_devices) > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:436:4
+435	    assert isinstance(local_devices, dict)
+436	    assert len(local_devices) > 0
+437	    # Set prop
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:445:4
+444	            break
+445	    assert test_did != '', 'no central hub gateway found'
+446	    result = await miot_http.set_prop_async(params=[{
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:477:4
+476	        domain=test_domain_oauth2, name=test_cloud_server, type_=dict)
+477	    assert isinstance(oauth_info, dict) and 'access_token' in oauth_info
+478	    miot_http = MIoTHttpClient(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:486:4
+485	        name=f'devices_{test_cloud_server}', type_=dict)
+486	    assert isinstance(local_devices, dict)
+487	    assert len(local_devices) > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:487:4
+486	    assert isinstance(local_devices, dict)
+487	    assert len(local_devices) > 0
+488	    # Action
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_cloud.py:496:4
+495	            break
+496	    assert test_did != '', 'no central hub gateway found'
+497	    result = await miot_http.action_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_common.py:22:4
+21	    match_result: list[str] = list(matcher.iter_all_nodes())
+22	    assert len(match_result) == 120
+23	    match_result: list[str] = list(matcher.iter_match(topic='test/1/1'))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_common.py:24:4
+23	    match_result: list[str] = list(matcher.iter_match(topic='test/1/1'))
+24	    assert len(match_result) == 3
+25	    assert set(match_result) == set(['test/1/1', 'test/+/1', 'test/1/#'])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_common.py:25:4
+24	    assert len(match_result) == 3
+25	    assert set(match_result) == set(['test/1/1', 'test/+/1', 'test/1/#'])
+26	    # Delete
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_common.py:29:4
+28	        del matcher['test/1/1']
+29	    assert len(list(matcher.iter_all_nodes())) == 119
+30	    match_result: list[str] = list(matcher.iter_match(topic='test/1/1'))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_common.py:31:4
+30	    match_result: list[str] = list(matcher.iter_match(topic='test/1/1'))
+31	    assert len(match_result) == 2
+32	    assert set(match_result) == set(['test/+/1', 'test/1/#'])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_common.py:32:4
+31	    assert len(match_result) == 2
+32	    assert set(match_result) == set(['test/+/1', 'test/1/#'])
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '11223344556677d9a03d43936fc384205'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: ./ha_xiaomi_home/test/test_lan.py:60:17
+59	    # Your central hub gateway did
+60	    test_token = '11223344556677d9a03d43936fc384205'
+61	    test_model = 'xiaomi.gateway.hub1'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_lan.py:66:4
+65	    # Check test params
+66	    assert int(test_did) > 0
+67	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_lan.py:129:4
+128	    result = await miot_lan.get_dev_list_async()
+129	    assert test_did in result
+130	    result = await miot_lan.set_prop_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_lan.py:132:4
+131	        did=test_did, siid=3, piid=1, value=True)
+132	    assert result.get('code', -1) == 0
+133	    await asyncio.sleep(0.2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_lan.py:136:4
+135	        did=test_did, siid=3, piid=1, value=False)
+136	    assert result.get('code', -1) == 0
+137	    await asyncio.sleep(0.2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_lan.py:144:4
+143	    result = await miot_lan.get_dev_list_async()
+144	    assert test_did in result
+145	    result = await miot_lan.set_prop_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_lan.py:147:4
+146	        did=test_did, siid=3, piid=1, value=True)
+147	    assert result.get('code', -1) == 0
+148	    await asyncio.sleep(0.2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_lan.py:151:4
+150	        did=test_did, siid=3, piid=1, value=False)
+151	    assert result.get('code', -1) == 0
+152	    await asyncio.sleep(0.2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_spec.py:33:4
+32	    await spec_parser.init_async()
+33	    assert await spec_parser.parse(urn=urn)
+34	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_spec.py:54:4
+53	    await spec_parser.init_async()
+54	    assert await spec_parser.refresh_async(urn_list=urn_list) == len(urn_list)
+55	
+
+--------------------------------------------------
+>> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b310-urllib-urlopen
+   Location: ./ha_xiaomi_home/test/test_spec.py:70:13
+69	            method='GET')
+70	        with urlopen(request) as response:
+71	            content = response.read()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_spec.py:89:8
+88	        result = await spec_parser.parse(urn=urn, skip_cache=True)
+89	        assert result is not None
+90	    end_ts = time.time()*1000
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:27:8
+26	        write_value: bytes = b'bytes value->{index}\n\n\n'
+27	        assert await storage.save_async(test_domain, var_name, write_value)
+28	        read_value: bytes = await storage.load_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:30:8
+29	            test_domain, var_name, type_=bytes)
+30	        assert read_value == write_value
+31	        if index > test_count/2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:32:12
+31	        if index > test_count/2:
+32	            assert await storage.remove_async(
+33	                test_domain, var_name, type_=bytes)
+34	        # str
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:37:8
+36	        write_value: str = f'str value->{index}\n\n\n'
+37	        assert await storage.save_async(test_domain, var_name, write_value)
+38	        read_value: str = await storage.load_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:40:8
+39	            test_domain, var_name, type_=str)
+40	        assert read_value == write_value
+41	        if index >= test_count/2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:42:12
+41	        if index >= test_count/2:
+42	            assert await storage.remove_async(test_domain, var_name, type_=str)
+43	        # list
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:46:8
+45	        write_value: list = [1, 2, 3, 4, 5, 'test_list', index]
+46	        assert await storage.save_async(test_domain, var_name, write_value)
+47	        read_value: list = await storage.load_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:49:8
+48	            test_domain, var_name, type_=list)
+49	        assert read_value == write_value
+50	        if index >= test_count/2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:51:12
+50	        if index >= test_count/2:
+51	            assert await storage.remove_async(test_domain, var_name, type_=list)
+52	        # dict
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:55:8
+54	        write_value: dict = {'k1': 'v1', 'k2': 'v2', 'index': f'index-{index}'}
+55	        assert await storage.save_async(test_domain, var_name, write_value)
+56	        read_value: dict = await storage.load_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:58:8
+57	            test_domain, var_name, type_=dict)
+58	        assert read_value == write_value
+59	        if index >= test_count/2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:60:12
+59	        if index >= test_count/2:
+60	            assert await storage.remove_async(test_domain, var_name, type_=dict)
+61	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:65:8
+64	    for name in names:
+65	        assert await storage.remove_async(
+66	            domain=test_domain, name=name, type_=bytes)
+67	    assert len(storage.get_names(domain=test_domain, type_=bytes)) == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:67:4
+66	            domain=test_domain, name=name, type_=bytes)
+67	    assert len(storage.get_names(domain=test_domain, type_=bytes)) == 0
+68	    assert len(storage.get_names(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:68:4
+67	    assert len(storage.get_names(domain=test_domain, type_=bytes)) == 0
+68	    assert len(storage.get_names(
+69	        domain=test_domain, type_=str)) == test_count/2
+70	    assert len(storage.get_names(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:70:4
+69	        domain=test_domain, type_=str)) == test_count/2
+70	    assert len(storage.get_names(
+71	        domain=test_domain, type_=list)) == test_count/2
+72	    assert len(storage.get_names(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:72:4
+71	        domain=test_domain, type_=list)) == test_count/2
+72	    assert len(storage.get_names(
+73	        domain=test_domain, type_=dict)) == test_count/2
+74	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:85:4
+84	    names: list[str] = storage.get_names(domain=test_domain, type_=dict)
+85	    assert len(names) > 0
+86	    for name in names:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:88:8
+87	        r_data = await storage.load_async(test_domain, name=name, type_=dict)
+88	        assert r_data
+89	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:109:4
+108	    result: list = await asyncio.gather(*task_list)
+109	    assert None not in result
+110	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:125:8
+124	            'utf-8')
+125	        assert await storage.save_file_async(
+126	            test_domain, file_name, file_content)
+127	        read_content = await storage.load_file_async(test_domain, file_name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:128:8
+127	        read_content = await storage.load_file_async(test_domain, file_name)
+128	        assert file_content == read_content
+129	        # Read the contents of the file directly
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:134:12
+133	            data = r_file.read()
+134	            assert data == file_content
+135	        if index > test_count/2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:136:12
+135	        if index > test_count/2:
+136	            assert await storage.remove_file_async(
+137	                domain=test_domain, name_with_suffix=file_name)
+138	    # Delete domain path
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:139:4
+138	    # Delete domain path
+139	    assert await storage.remove_domain_async(test_domain)
+140	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:162:4
+161	    config = config_base.copy()
+162	    assert await storage.update_user_config_async(
+163	        uid=test_uid, cloud_server=test_cloud_server, config=config)
+164	    # Test load all
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:165:4
+164	    # Test load all
+165	    assert (await storage.load_user_config_async(
+166	        uid=test_uid, cloud_server=test_cloud_server)) == config
+167	    # Test update
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:172:4
+171	    }
+172	    assert await storage.update_user_config_async(
+173	        uid=test_uid, cloud_server=test_cloud_server, config=config_update)
+174	    config.update(config_update)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:175:4
+174	    config.update(config_update)
+175	    assert (await storage.load_user_config_async(
+176	        uid=test_uid, cloud_server=test_cloud_server)) == config
+177	    # Test replace
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:179:4
+178	    config_replace = None
+179	    assert await storage.update_user_config_async(
+180	        uid=test_uid, cloud_server=test_cloud_server,
+181	        config=config_update, replace=True)
+182	    assert (config_replace := await storage.load_user_config_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:182:4
+181	        config=config_update, replace=True)
+182	    assert (config_replace := await storage.load_user_config_async(
+183	        uid=test_uid, cloud_server=test_cloud_server)) == config_update
+184	    _LOGGER.info('replace result, %s', config_replace)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:191:4
+190	    _LOGGER.info('query result 1, %s', query_result)
+191	    assert await storage.update_user_config_async(
+192	        uid=test_uid, cloud_server=test_cloud_server,
+193	        config=config_base, replace=True)
+194	    query_result = await storage.load_user_config_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:201:4
+200	    # Remove config
+201	    assert await storage.update_user_config_async(
+202	        uid=test_uid, cloud_server=test_cloud_server, config=None)
+203	    query_result = await storage.load_user_config_async(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:207:4
+206	    # Remove domain
+207	    assert await storage.remove_domain_async(domain='miot_config')
+208	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./ha_xiaomi_home/test/test_storage.py:217:4
+216	    storage = MIoTStorage(test_cache_path)
+217	    assert await storage.clear_async()
+
+--------------------------------------------------
+>> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b310-urllib-urlopen
+   Location: ./ha_xiaomi_home/tools/common.py:40:9
+39	    content: bytes = None
+40	    with urlopen(request) as response:
+41	        content = response.read()
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 15765
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 136
+		Medium: 6
+		High: 2
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 2
+		High: 142
+Files skipped (3):
+	./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_device.py (syntax error while parsing AST from file)
+	./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_lan.py (syntax error while parsing AST from file)
+	./ha_xiaomi_home/custom_components/xiaomi_home/miot/miot_mips.py (syntax error while parsing AST from file)

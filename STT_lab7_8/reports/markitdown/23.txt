@@ -1,0 +1,1065 @@
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[main]	INFO	running on Python 3.9.6
+Run started:2025-03-20 04:56:25.228019
+
+Test results:
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./markitdown/bandit.py:3:0
+2	import os
+3	import subprocess
+4	from git import Repo, GitCommandError
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: ./markitdown/bandit.py:41:20
+40	                with open(reportFile, 'w') as fileHandle:
+41	                    subprocess.run(['bandit', '-r', repoPath], stdout=fileHandle, stderr=subprocess.STDOUT)
+42	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./markitdown/bandit.py:41:20
+40	                with open(reportFile, 'w') as fileHandle:
+41	                    subprocess.run(['bandit', '-r', repoPath], stdout=fileHandle, stderr=subprocess.STDOUT)
+42	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown-sample-plugin/tests/test_sample_plugin.py:28:12
+27	        for test_string in RTF_TEST_STRINGS:
+28	            assert test_string in result.text_content
+29	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown-sample-plugin/tests/test_sample_plugin.py:37:8
+36	    for test_string in RTF_TEST_STRINGS:
+37	        assert test_string in result.text_content
+38	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/_markitdown.py:190:12
+189	            plugins = _load_plugins()
+190	            assert plugins is not None
+191	            for plugin in plugins:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/_markitdown.py:307:16
+306	                # Deprecated -- use stream_info
+307	                assert base_guess is not None  # for mypy
+308	                base_guess = base_guess.copy_and_update(extension=file_extension)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/_markitdown.py:312:16
+311	                # Deprecated -- use stream_info
+312	                assert base_guess is not None  # for mypy
+313	                base_guess = base_guess.copy_and_update(url=url)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/_markitdown.py:454:16
+453	                # Sanity check -- make sure the cur_pos is still the same
+454	                assert (
+455	                    cur_pos == file_stream.tell()
+456	                ), f"File stream position should NOT change between guess iterations"
+457	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/_markitdown.py:492:16
+491	                # accept() should not have changed the file stream position
+492	                assert (
+493	                    cur_pos == file_stream.tell()
+494	                ), f"{type(converter).__name__}.accept() should NOT change the file_stream position"
+495	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/_stream_info.py:35:12
+34	        for si in args:
+35	            assert isinstance(si, StreamInfo)
+36	            new_info.update({k: v for k, v in asdict(si).items() if v is not None})
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_exiftool.py:2:0
+1	import json
+2	import subprocess
+3	import locale
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_exiftool.py:33:17
+32	    try:
+33	        output = subprocess.run(
+34	            [exiftool_path, "-json", "-"],
+35	            input=file_stream.read(),
+36	            capture_output=True,
+37	            text=False,
+38	        ).stdout
+39	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_html_converter.py:63:8
+62	
+63	        assert isinstance(webpage_text, str)
+64	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_outlook_msg_converter.py:64:8
+63	            )
+64	        except Exception as e:
+65	            pass
+66	        finally:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_outlook_msg_converter.py:123:8
+122	        """Helper to safely extract and decode stream data from the MSG file."""
+123	        assert isinstance(
+124	            msg, olefile.OleFileIO
+125	        )  # Ensure msg is of the correct type (type hinting is not possible with the optional olefile package)
+126	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_outlook_msg_converter.py:140:8
+139	                        return data.decode("utf-8", errors="ignore").strip()
+140	        except Exception:
+141	            pass
+142	        return None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_pdf_converter.py:75:8
+74	
+75	        assert isinstance(file_stream, io.IOBase)  # for mypy
+76	        return DocumentConverterResult(
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_pptx_converter.py:126:24
+125	                            )
+126	                        except Exception:
+127	                            # Unable to generate a description
+128	                            pass
+129	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_pptx_converter.py:133:20
+132	                        alt_text = shape._element._nvXxPr.cNvPr.attrib.get("descr", "")
+133	                    except Exception:
+134	                        # Unable to get alt text
+135	                        pass
+136	
+
+--------------------------------------------------
+>> Issue: [B408:blacklist] Using minidom to parse untrusted XML data is known to be vulnerable to XML attacks. Replace minidom with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b408-import-xml-minidom
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_rss_converter.py:1:0
+1	from xml.dom import minidom
+2	from typing import BinaryIO, Any, Union
+3	from bs4 import BeautifulSoup
+
+--------------------------------------------------
+>> Issue: [B318:blacklist] Using xml.dom.minidom.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b313-b320-xml-bad-minidom
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_rss_converter.py:59:18
+58	        try:
+59	            doc = minidom.parse(file_stream)
+60	            return self._feed_type(doc) is not None
+
+--------------------------------------------------
+>> Issue: [B318:blacklist] Using xml.dom.minidom.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b313-b320-xml-bad-minidom
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_rss_converter.py:83:14
+82	    ) -> DocumentConverterResult:
+83	        doc = minidom.parse(file_stream)
+84	        feed_type = self._feed_type(doc)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_wikipedia_converter.py:77:16
+76	                main_title = title_elm.string  # type: ignore
+77	                assert isinstance(main_title, str)
+78	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_youtube_converter.py:109:8
+108	        title = self._get(metadata, ["title", "og:title", "name"])  # type: ignore
+109	        assert isinstance(title, str)
+110	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/src/markitdown/converters/_youtube_converter.py:165:8
+164	        title = title if title else soup.title.string
+165	        assert isinstance(title, str)
+166	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:3:0
+2	import os
+3	import subprocess
+4	import pytest
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:19:13
+18	def test_version(shared_tmp_dir) -> None:
+19	    result = subprocess.run(
+20	        ["python", "-m", "markitdown", "--version"], capture_output=True, text=True
+21	    )
+22	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:19:13
+18	def test_version(shared_tmp_dir) -> None:
+19	    result = subprocess.run(
+20	        ["python", "-m", "markitdown", "--version"], capture_output=True, text=True
+21	    )
+22	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:23:4
+22	
+23	    assert result.returncode == 0, f"CLI exited with error: {result.stderr}"
+24	    assert __version__ in result.stdout, f"Version not found in output: {result.stdout}"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:24:4
+23	    assert result.returncode == 0, f"CLI exited with error: {result.stderr}"
+24	    assert __version__ in result.stdout, f"Version not found in output: {result.stdout}"
+25	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:28:13
+27	def test_invalid_flag(shared_tmp_dir) -> None:
+28	    result = subprocess.run(
+29	        ["python", "-m", "markitdown", "--foobar"], capture_output=True, text=True
+30	    )
+31	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:28:13
+27	def test_invalid_flag(shared_tmp_dir) -> None:
+28	    result = subprocess.run(
+29	        ["python", "-m", "markitdown", "--foobar"], capture_output=True, text=True
+30	    )
+31	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:32:4
+31	
+32	    assert result.returncode != 0, f"CLI exited with error: {result.stderr}"
+33	    assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:33:4
+32	    assert result.returncode != 0, f"CLI exited with error: {result.stderr}"
+33	    assert (
+34	        "unrecognized arguments" in result.stderr
+35	    ), f"Expected 'unrecognized arguments' to appear in STDERR"
+36	    assert "SYNTAX" in result.stderr, f"Expected 'SYNTAX' to appear in STDERR"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:36:4
+35	    ), f"Expected 'unrecognized arguments' to appear in STDERR"
+36	    assert "SYNTAX" in result.stderr, f"Expected 'SYNTAX' to appear in STDERR"
+37	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:41:13
+40	    # DOC X
+41	    result = subprocess.run(
+42	        ["python", "-m", "markitdown", os.path.join(TEST_FILES_DIR, "test.docx")],
+43	        capture_output=True,
+44	        text=True,
+45	    )
+46	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:41:13
+40	    # DOC X
+41	    result = subprocess.run(
+42	        ["python", "-m", "markitdown", os.path.join(TEST_FILES_DIR, "test.docx")],
+43	        capture_output=True,
+44	        text=True,
+45	    )
+46	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:47:4
+46	
+47	    assert result.returncode == 0, f"CLI exited with error: {result.stderr}"
+48	    for test_string in DOCX_TEST_STRINGS:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:49:8
+48	    for test_string in DOCX_TEST_STRINGS:
+49	        assert (
+50	            test_string in result.stdout
+51	        ), f"Expected string not found in output: {test_string}"
+52	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:57:13
+56	    docx_output_file_1 = os.path.join(shared_tmp_dir, "test_docx_1.md")
+57	    result = subprocess.run(
+58	        [
+59	            "python",
+60	            "-m",
+61	            "markitdown",
+62	            os.path.join(TEST_FILES_DIR, "test.docx"),
+63	            "-o",
+64	            docx_output_file_1,
+65	        ],
+66	        capture_output=True,
+67	        text=True,
+68	    )
+69	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:57:13
+56	    docx_output_file_1 = os.path.join(shared_tmp_dir, "test_docx_1.md")
+57	    result = subprocess.run(
+58	        [
+59	            "python",
+60	            "-m",
+61	            "markitdown",
+62	            os.path.join(TEST_FILES_DIR, "test.docx"),
+63	            "-o",
+64	            docx_output_file_1,
+65	        ],
+66	        capture_output=True,
+67	        text=True,
+68	    )
+69	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:70:4
+69	
+70	    assert result.returncode == 0, f"CLI exited with error: {result.stderr}"
+71	    assert os.path.exists(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:71:4
+70	    assert result.returncode == 0, f"CLI exited with error: {result.stderr}"
+71	    assert os.path.exists(
+72	        docx_output_file_1
+73	    ), f"Output file not created: {docx_output_file_1}"
+74	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:78:12
+77	        for test_string in DOCX_TEST_STRINGS:
+78	            assert (
+79	                test_string in output
+80	            ), f"Expected string not found in output: {test_string}"
+81	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b607_start_process_with_partial_path.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:84:13
+83	    docx_output_file_2 = os.path.join(shared_tmp_dir, "test_docx_2.md")
+84	    result = subprocess.run(
+85	        [
+86	            "python",
+87	            "-m",
+88	            "markitdown",
+89	            "-o",
+90	            docx_output_file_2,
+91	            os.path.join(TEST_FILES_DIR, "test.docx"),
+92	        ],
+93	        capture_output=True,
+94	        text=True,
+95	    )
+96	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:84:13
+83	    docx_output_file_2 = os.path.join(shared_tmp_dir, "test_docx_2.md")
+84	    result = subprocess.run(
+85	        [
+86	            "python",
+87	            "-m",
+88	            "markitdown",
+89	            "-o",
+90	            docx_output_file_2,
+91	            os.path.join(TEST_FILES_DIR, "test.docx"),
+92	        ],
+93	        capture_output=True,
+94	        text=True,
+95	    )
+96	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:97:4
+96	
+97	    assert result.returncode == 0, f"CLI exited with error: {result.stderr}"
+98	    assert os.path.exists(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:98:4
+97	    assert result.returncode == 0, f"CLI exited with error: {result.stderr}"
+98	    assert os.path.exists(
+99	        docx_output_file_2
+100	    ), f"Output file not created: {docx_output_file_2}"
+101	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_cli.py:105:12
+104	        for test_string in DOCX_TEST_STRINGS:
+105	            assert (
+106	                test_string in output
+107	            ), f"Expected string not found in output: {test_string}"
+108	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:173:8
+172	    for string in expected_strings:
+173	        assert string in text_content
+174	    if exclude_strings:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:176:12
+175	        for string in exclude_strings:
+176	            assert string not in text_content
+177	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:199:8
+198	        # Make sure the targted attribute is updated
+199	        assert getattr(updated_stream_info, keyword) == f"{keyword}.2"
+200	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:204:16
+203	            if k != keyword:
+204	                assert getattr(stream_info_original, k) == getattr(
+205	                    updated_stream_info, k
+206	                )
+207	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:216:8
+215	        # Make sure the targted attribute is updated
+216	        assert getattr(updated_stream_info, keyword) == f"{keyword}.2"
+217	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:221:16
+220	            if k != keyword:
+221	                assert getattr(stream_info_original, k) == getattr(
+222	                    updated_stream_info, k
+223	                )
+224	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:231:4
+230	    )
+231	    assert updated_stream_info.extension == "extension.2"
+232	    assert updated_stream_info.filename == "filename.2"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:232:4
+231	    assert updated_stream_info.extension == "extension.2"
+232	    assert updated_stream_info.filename == "filename.2"
+233	    assert updated_stream_info.mimetype == "mimetype.3"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:233:4
+232	    assert updated_stream_info.filename == "filename.2"
+233	    assert updated_stream_info.mimetype == "mimetype.3"
+234	    assert updated_stream_info.charset == "charset.3"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:234:4
+233	    assert updated_stream_info.mimetype == "mimetype.3"
+234	    assert updated_stream_info.charset == "charset.3"
+235	    assert updated_stream_info.local_path == "local_path.1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:235:4
+234	    assert updated_stream_info.charset == "charset.3"
+235	    assert updated_stream_info.local_path == "local_path.1"
+236	    assert updated_stream_info.url == "url.1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:236:4
+235	    assert updated_stream_info.local_path == "local_path.1"
+236	    assert updated_stream_info.url == "url.1"
+237	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:243:4
+242	    )
+243	    assert updated_stream_info.extension == "extension.4"
+244	    assert updated_stream_info.filename == "filename.5"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:244:4
+243	    assert updated_stream_info.extension == "extension.4"
+244	    assert updated_stream_info.filename == "filename.5"
+245	    assert updated_stream_info.mimetype == "mimetype.6"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:245:4
+244	    assert updated_stream_info.filename == "filename.5"
+245	    assert updated_stream_info.mimetype == "mimetype.6"
+246	    assert updated_stream_info.charset == "charset.7"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:246:4
+245	    assert updated_stream_info.mimetype == "mimetype.6"
+246	    assert updated_stream_info.charset == "charset.7"
+247	    assert updated_stream_info.local_path == "local_path.1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:247:4
+246	    assert updated_stream_info.charset == "charset.7"
+247	    assert updated_stream_info.local_path == "local_path.1"
+248	    assert updated_stream_info.url == "url.1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:248:4
+247	    assert updated_stream_info.local_path == "local_path.1"
+248	    assert updated_stream_info.url == "url.1"
+249	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:275:12
+274	            )
+275	            assert len(guesses) > 0
+276	            assert guesses[0].mimetype == expected_mimetype
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:276:12
+275	            assert len(guesses) > 0
+276	            assert guesses[0].mimetype == expected_mimetype
+277	            assert guesses[0].extension == os.path.splitext(file_path)[1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:277:12
+276	            assert guesses[0].mimetype == expected_mimetype
+277	            assert guesses[0].extension == os.path.splitext(file_path)[1]
+278	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:290:8
+289	    for test_string in PDF_TEST_STRINGS:
+290	        assert test_string in result.text_content
+291	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:293:15
+292	    # By stream
+293	    response = requests.get(PDF_TEST_URL)
+294	    result = markitdown.convert_stream(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:298:8
+297	    for test_string in PDF_TEST_STRINGS:
+298	        assert test_string in result.text_content
+299	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:303:8
+302	    for test_string in YOUTUBE_TEST_STRINGS:
+303	        assert test_string in result.text_content
+304	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:321:8
+320	        text_content = result.text_content.replace("\\", "")
+321	        assert test_string in text_content
+322	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:369:8
+368	    for test_string in RSS_TEST_STRINGS:
+369	        assert test_string in text_content
+370	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:392:4
+391	    result = markitdown.convert_stream(io.BytesIO(input_data))
+392	    assert "# Test" in result.text_content
+393	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:397:4
+396	    result = markitdown.convert_stream(io.BytesIO(input_data))
+397	    assert "# Test" in result.text_content
+398	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:418:12
+417	            text_content = result.text_content.replace("\\", "")
+418	            assert test_string in text_content
+419	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:467:12
+466	        for test_string in RSS_TEST_STRINGS:
+467	            assert test_string in text_content
+468	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:491:8
+490	        result_lower = result.text_content.lower()
+491	        assert (
+492	            ("1" in result_lower or "one" in result_lower)
+493	            and ("2" in result_lower or "two" in result_lower)
+494	            and ("3" in result_lower or "three" in result_lower)
+495	            and ("4" in result_lower or "four" in result_lower)
+496	            and ("5" in result_lower or "five" in result_lower)
+497	        )
+498	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:511:4
+510	        )
+511	    assert len(exc_info.value.attempts) == 1
+512	    assert type(exc_info.value.attempts[0].converter).__name__ == "PptxConverter"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:512:4
+511	    assert len(exc_info.value.attempts) == 1
+512	    assert type(exc_info.value.attempts[0].converter).__name__ == "PptxConverter"
+513	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:527:12
+526	            result = markitdown.convert(os.path.join(TEST_FILES_DIR, "test.jpg"))
+527	            assert len(w) == 1
+528	            assert w[0].category is DeprecationWarning
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:528:12
+527	            assert len(w) == 1
+528	            assert w[0].category is DeprecationWarning
+529	            assert result.text_content.strip() == ""
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:529:12
+528	            assert w[0].category is DeprecationWarning
+529	            assert result.text_content.strip() == ""
+530	    finally:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:534:4
+533	    which_exiftool = shutil.which("exiftool")
+534	    assert which_exiftool is not None
+535	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:541:8
+540	        target = f"{key}: {JPG_TEST_EXIFTOOL[key]}"
+541	        assert target in result.text_content
+542	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:549:8
+548	        target = f"{key}: {JPG_TEST_EXIFTOOL[key]}"
+549	        assert target in result.text_content
+550	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:555:8
+554	        target = f"{key}: {MP3_TEST_EXIFTOOL[key]}"
+555	        assert target in result.text_content
+556	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:568:8
+567	    for test_string in LLM_TEST_STRINGS:
+568	        assert test_string in result.text_content
+569	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:573:8
+572	    for test_string in ["red", "circle", "blue", "square"]:
+573	        assert test_string in result.text_content.lower()
+574	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./markitdown/packages/markitdown/tests/test_markitdown.py:579:8
+578	    for test_string in LLM_TEST_STRINGS:
+579	        assert test_string in result.text_content
+580	    # Standard alt text is included
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 3266
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 91
+		Medium: 3
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 1
+		Medium: 0
+		High: 93
+Files skipped (0):

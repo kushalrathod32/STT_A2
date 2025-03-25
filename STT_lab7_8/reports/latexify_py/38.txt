@@ -1,0 +1,1797 @@
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[main]	INFO	running on Python 3.9.6
+Run started:2025-03-20 05:17:12.052790
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/integration_tests/utils.py:24:8
+23	        latexified = frontend.function(fn)
+24	        assert str(latexified) == latex
+25	        assert latexified._repr_latex_() == rf"$$ \displaystyle {latex} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/integration_tests/utils.py:25:8
+24	        assert str(latexified) == latex
+25	        assert latexified._repr_latex_() == rf"$$ \displaystyle {latex} $$"
+26	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/integration_tests/utils.py:32:4
+31	    latexified = frontend.function(**kwargs)(fn)
+32	    assert str(latexified) == latex
+33	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/integration_tests/utils.py:33:4
+32	    assert str(latexified) == latex
+33	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex} $$"
+34	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/integration_tests/utils.py:40:4
+39	    latexified = frontend.function(fn, **kwargs)
+40	    assert str(latexified) == latex
+41	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/integration_tests/utils.py:41:4
+40	    assert str(latexified) == latex
+41	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/analyzers_test.py:109:4
+108	    node = ast_utils.parse_expr(code)
+109	    assert isinstance(node, ast.Call)
+110	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/analyzers_test.py:118:8
+117	    else:
+118	        assert info.step is None
+119	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/analyzers_test.py:122:12
+121	        if expected is not None:
+122	            assert observed == expected
+123	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/analyzers_test.py:124:12
+123	        else:
+124	            assert observed is None
+125	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/analyzers_test.py:147:4
+146	    node = ast_utils.parse_expr(code)
+147	    assert isinstance(node, ast.Call)
+148	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:101:4
+100	def test_is_constant_legacy(value: ast.AST, expected: bool) -> None:
+101	    assert ast_utils.is_constant(value) is expected
+102	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:114:4
+113	def test_is_constant(value: ast.AST, expected: bool) -> None:
+114	    assert ast_utils.is_constant(value) is expected
+115	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:118:4
+117	def test_extract_int_or_none() -> None:
+118	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(-123)) == -123
+119	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(0)) == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:119:4
+118	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(-123)) == -123
+119	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(0)) == 0
+120	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(123)) == 123
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:120:4
+119	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(0)) == 0
+120	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(123)) == 123
+121	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:125:4
+124	    # Not a Constant node with int.
+125	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(None)) is None
+126	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(True)) is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:126:4
+125	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(None)) is None
+126	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(True)) is None
+127	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(...)) is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:127:4
+126	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(True)) is None
+127	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(...)) is None
+128	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(123.0)) is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:128:4
+127	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(...)) is None
+128	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(123.0)) is None
+129	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(4 + 5j)) is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:129:4
+128	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(123.0)) is None
+129	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(4 + 5j)) is None
+130	    assert ast_utils.extract_int_or_none(ast_utils.make_constant("123")) is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:130:4
+129	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(4 + 5j)) is None
+130	    assert ast_utils.extract_int_or_none(ast_utils.make_constant("123")) is None
+131	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(b"123")) is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:131:4
+130	    assert ast_utils.extract_int_or_none(ast_utils.make_constant("123")) is None
+131	    assert ast_utils.extract_int_or_none(ast_utils.make_constant(b"123")) is None
+132	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:135:4
+134	def test_extract_int() -> None:
+135	    assert ast_utils.extract_int(ast_utils.make_constant(-123)) == -123
+136	    assert ast_utils.extract_int(ast_utils.make_constant(0)) == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:136:4
+135	    assert ast_utils.extract_int(ast_utils.make_constant(-123)) == -123
+136	    assert ast_utils.extract_int(ast_utils.make_constant(0)) == 0
+137	    assert ast_utils.extract_int(ast_utils.make_constant(123)) == 123
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:137:4
+136	    assert ast_utils.extract_int(ast_utils.make_constant(0)) == 0
+137	    assert ast_utils.extract_int(ast_utils.make_constant(123)) == 123
+138	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/ast_utils_test.py:189:4
+188	def test_extract_function_name_or_none(value: ast.Call, expected: str | None) -> None:
+189	    assert ast_utils.extract_function_name_or_none(value) == expected
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen.py:361:8
+360	        name = ast_utils.extract_function_name_or_none(node)
+361	        assert name in ("fsum", "sum", "prod")
+362	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:34:4
+33	    ).body[0]
+34	    assert isinstance(tree, ast.FunctionDef)
+35	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:38:4
+37	    latex_with_flag = r"f(x) = x"
+38	    assert FunctionCodegen().visit(tree) == latex_with_flag
+39	    assert FunctionCodegen(use_signature=False).visit(tree) == latex_without_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:39:4
+38	    assert FunctionCodegen().visit(tree) == latex_with_flag
+39	    assert FunctionCodegen(use_signature=False).visit(tree) == latex_without_flag
+40	    assert FunctionCodegen(use_signature=True).visit(tree) == latex_with_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:40:4
+39	    assert FunctionCodegen(use_signature=False).visit(tree) == latex_without_flag
+40	    assert FunctionCodegen(use_signature=True).visit(tree) == latex_with_flag
+41	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:53:4
+52	    ).body[0]
+53	    assert isinstance(tree, ast.FunctionDef)
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:56:4
+55	    latex = r"f(x) = x"
+56	    assert FunctionCodegen().visit(tree) == latex
+57	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:71:4
+70	    ).body[0]
+71	    assert isinstance(tree, ast.FunctionDef)
+72	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:74:4
+73	    latex = r"f(x) = x"
+74	    assert FunctionCodegen().visit(tree) == latex
+75	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:88:4
+87	    node = ast_utils.parse_expr(code)
+88	    assert isinstance(node, ast.Tuple)
+89	    assert FunctionCodegen().visit(node) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:89:4
+88	    assert isinstance(node, ast.Tuple)
+89	    assert FunctionCodegen().visit(node) == latex
+90	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:103:4
+102	    node = ast_utils.parse_expr(code)
+103	    assert isinstance(node, ast.List)
+104	    assert FunctionCodegen().visit(node) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:104:4
+103	    assert isinstance(node, ast.List)
+104	    assert FunctionCodegen().visit(node) == latex
+105	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:119:4
+118	    node = ast_utils.parse_expr(code)
+119	    assert isinstance(node, ast.Set)
+120	    assert FunctionCodegen().visit(node) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:120:4
+119	    assert isinstance(node, ast.Set)
+120	    assert FunctionCodegen().visit(node) == latex
+121	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:169:4
+168	    node = ast_utils.parse_expr(code)
+169	    assert isinstance(node, ast.ListComp)
+170	    assert FunctionCodegen().visit(node) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:170:4
+169	    assert isinstance(node, ast.ListComp)
+170	    assert FunctionCodegen().visit(node) == latex
+171	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:219:4
+218	    node = ast_utils.parse_expr(code)
+219	    assert isinstance(node, ast.SetComp)
+220	    assert FunctionCodegen().visit(node) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:220:4
+219	    assert isinstance(node, ast.SetComp)
+220	    assert FunctionCodegen().visit(node) == latex
+221	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:270:4
+269	    node = ast_utils.parse_expr(code)
+270	    assert isinstance(node, ast.Call)
+271	    assert FunctionCodegen().visit(node) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:271:4
+270	    assert isinstance(node, ast.Call)
+271	    assert FunctionCodegen().visit(node) == latex
+272	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:385:8
+384	        node = ast_utils.parse_expr(src_fn + src_suffix)
+385	        assert isinstance(node, ast.Call)
+386	        assert FunctionCodegen().visit(node) == dest_fn + dest_suffix
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:386:8
+385	        assert isinstance(node, ast.Call)
+386	        assert FunctionCodegen().visit(node) == dest_fn + dest_suffix
+387	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:436:4
+435	    node = ast_utils.parse_expr(code)
+436	    assert isinstance(node, ast.Call)
+437	    assert FunctionCodegen().visit(node) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:437:4
+436	    assert isinstance(node, ast.Call)
+437	    assert FunctionCodegen().visit(node) == latex
+438	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:462:8
+461	        node = ast_utils.parse_expr(src_fn + src_suffix)
+462	        assert isinstance(node, ast.Call)
+463	        assert FunctionCodegen().visit(node) == dest_fn + dest_suffix
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:463:8
+462	        assert isinstance(node, ast.Call)
+463	        assert FunctionCodegen().visit(node) == dest_fn + dest_suffix
+464	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:497:4
+496	    node = ast_utils.parse_expr(code)
+497	    assert isinstance(node, ast.IfExp)
+498	    assert FunctionCodegen().visit(node) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:498:4
+497	    assert isinstance(node, ast.IfExp)
+498	    assert FunctionCodegen().visit(node) == latex
+499	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:680:4
+679	    tree = ast_utils.parse_expr(code)
+680	    assert isinstance(tree, ast.BinOp)
+681	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:681:4
+680	    assert isinstance(tree, ast.BinOp)
+681	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+682	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:719:4
+718	    tree = ast_utils.parse_expr(code)
+719	    assert isinstance(tree, ast.UnaryOp)
+720	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:720:4
+719	    assert isinstance(tree, ast.UnaryOp)
+720	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+721	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:773:4
+772	    tree = ast_utils.parse_expr(code)
+773	    assert isinstance(tree, ast.Compare)
+774	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:774:4
+773	    assert isinstance(tree, ast.Compare)
+774	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+775	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:819:4
+818	    tree = ast_utils.parse_expr(code)
+819	    assert isinstance(tree, ast.BoolOp)
+820	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:820:4
+819	    assert isinstance(tree, ast.BoolOp)
+820	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+821	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:844:4
+843	    tree = ast_utils.parse_expr(code)
+844	    assert isinstance(tree, cls)
+845	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:845:4
+844	    assert isinstance(tree, cls)
+845	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+846	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:869:4
+868	    tree = ast_utils.parse_expr(code)
+869	    assert isinstance(tree, ast.Constant)
+870	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:884:4
+883	    tree = ast_utils.parse_expr(code)
+884	    assert isinstance(tree, ast.Subscript)
+885	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:885:4
+884	    assert isinstance(tree, ast.Subscript)
+885	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+886	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:899:4
+898	    tree = ast_utils.parse_expr(code)
+899	    assert isinstance(tree, ast.BinOp)
+900	    assert function_codegen.FunctionCodegen(use_set_symbols=True).visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:900:4
+899	    assert isinstance(tree, ast.BinOp)
+900	    assert function_codegen.FunctionCodegen(use_set_symbols=True).visit(tree) == latex
+901	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:914:4
+913	    tree = ast_utils.parse_expr(code)
+914	    assert isinstance(tree, ast.Compare)
+915	    assert function_codegen.FunctionCodegen(use_set_symbols=True).visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:915:4
+914	    assert isinstance(tree, ast.Compare)
+915	    assert function_codegen.FunctionCodegen(use_set_symbols=True).visit(tree) == latex
+916	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:960:4
+959	    tree = ast_utils.parse_expr(code)
+960	    assert isinstance(tree, ast.Call)
+961	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/function_codegen_test.py:961:4
+960	    assert isinstance(tree, ast.Call)
+961	    assert function_codegen.FunctionCodegen().visit(tree) == latex
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/identifier_converter_test.py:33:4
+32	) -> None:
+33	    assert (
+34	        identifier_converter.IdentifierConverter(
+35	            use_math_symbols=use_math_symbols
+36	        ).convert(name)
+37	        == expected
+38	    )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:10:4
+9	def test_eq() -> None:
+10	    assert Latex("foo") == Latex("foo")
+11	    assert Latex("foo") != "foo"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:11:4
+10	    assert Latex("foo") == Latex("foo")
+11	    assert Latex("foo") != "foo"
+12	    assert Latex("foo") != Latex("bar")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:12:4
+11	    assert Latex("foo") != "foo"
+12	    assert Latex("foo") != Latex("bar")
+13	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:16:4
+15	def test_str() -> None:
+16	    assert str(Latex("foo")) == "foo"
+17	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:20:4
+19	def test_add() -> None:
+20	    assert Latex("foo") + "bar" == Latex("foobar")
+21	    assert "foo" + Latex("bar") == Latex("foobar")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:21:4
+20	    assert Latex("foo") + "bar" == Latex("foobar")
+21	    assert "foo" + Latex("bar") == Latex("foobar")
+22	    assert Latex("foo") + Latex("bar") == Latex("foobar")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:22:4
+21	    assert "foo" + Latex("bar") == Latex("foobar")
+22	    assert Latex("foo") + Latex("bar") == Latex("foobar")
+23	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:26:4
+25	def test_opt() -> None:
+26	    assert Latex.opt("foo") == Latex("[foo]")
+27	    assert Latex.opt(Latex("foo")) == Latex("[foo]")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:27:4
+26	    assert Latex.opt("foo") == Latex("[foo]")
+27	    assert Latex.opt(Latex("foo")) == Latex("[foo]")
+28	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:31:4
+30	def test_arg() -> None:
+31	    assert Latex.arg("foo") == Latex("{foo}")
+32	    assert Latex.arg(Latex("foo")) == Latex("{foo}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:32:4
+31	    assert Latex.arg("foo") == Latex("{foo}")
+32	    assert Latex.arg(Latex("foo")) == Latex("{foo}")
+33	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:36:4
+35	def test_paren() -> None:
+36	    assert Latex.paren("foo") == Latex(r"\mathopen{}\left( foo \mathclose{}\right)")
+37	    assert Latex.paren(Latex("foo")) == Latex(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:37:4
+36	    assert Latex.paren("foo") == Latex(r"\mathopen{}\left( foo \mathclose{}\right)")
+37	    assert Latex.paren(Latex("foo")) == Latex(
+38	        r"\mathopen{}\left( foo \mathclose{}\right)"
+39	    )
+40	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:43:4
+42	def test_curly() -> None:
+43	    assert Latex.curly("foo") == Latex(r"\mathopen{}\left\{ foo \mathclose{}\right\}")
+44	    assert Latex.curly(Latex("foo")) == Latex(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:44:4
+43	    assert Latex.curly("foo") == Latex(r"\mathopen{}\left\{ foo \mathclose{}\right\}")
+44	    assert Latex.curly(Latex("foo")) == Latex(
+45	        r"\mathopen{}\left\{ foo \mathclose{}\right\}"
+46	    )
+47	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:50:4
+49	def test_square() -> None:
+50	    assert Latex.square("foo") == Latex(r"\mathopen{}\left[ foo \mathclose{}\right]")
+51	    assert Latex.square(Latex("foo")) == Latex(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:51:4
+50	    assert Latex.square("foo") == Latex(r"\mathopen{}\left[ foo \mathclose{}\right]")
+51	    assert Latex.square(Latex("foo")) == Latex(
+52	        r"\mathopen{}\left[ foo \mathclose{}\right]"
+53	    )
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:57:4
+56	def test_command() -> None:
+57	    assert Latex.command("a") == Latex(r"\a")
+58	    assert Latex.command("a", options=[]) == Latex(r"\a")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:58:4
+57	    assert Latex.command("a") == Latex(r"\a")
+58	    assert Latex.command("a", options=[]) == Latex(r"\a")
+59	    assert Latex.command("a", options=["b"]) == Latex(r"\a[b]")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:59:4
+58	    assert Latex.command("a", options=[]) == Latex(r"\a")
+59	    assert Latex.command("a", options=["b"]) == Latex(r"\a[b]")
+60	    assert Latex.command("a", options=[Latex("b")]) == Latex(r"\a[b]")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:60:4
+59	    assert Latex.command("a", options=["b"]) == Latex(r"\a[b]")
+60	    assert Latex.command("a", options=[Latex("b")]) == Latex(r"\a[b]")
+61	    assert Latex.command("a", options=["b", "c"]) == Latex(r"\a[b][c]")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:61:4
+60	    assert Latex.command("a", options=[Latex("b")]) == Latex(r"\a[b]")
+61	    assert Latex.command("a", options=["b", "c"]) == Latex(r"\a[b][c]")
+62	    assert Latex.command("a", args=[]) == Latex(r"\a")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:62:4
+61	    assert Latex.command("a", options=["b", "c"]) == Latex(r"\a[b][c]")
+62	    assert Latex.command("a", args=[]) == Latex(r"\a")
+63	    assert Latex.command("a", args=["b"]) == Latex(r"\a{b}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:63:4
+62	    assert Latex.command("a", args=[]) == Latex(r"\a")
+63	    assert Latex.command("a", args=["b"]) == Latex(r"\a{b}")
+64	    assert Latex.command("a", args=[Latex("b")]) == Latex(r"\a{b}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:64:4
+63	    assert Latex.command("a", args=["b"]) == Latex(r"\a{b}")
+64	    assert Latex.command("a", args=[Latex("b")]) == Latex(r"\a{b}")
+65	    assert Latex.command("a", args=["b", "c"]) == Latex(r"\a{b}{c}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:65:4
+64	    assert Latex.command("a", args=[Latex("b")]) == Latex(r"\a{b}")
+65	    assert Latex.command("a", args=["b", "c"]) == Latex(r"\a{b}{c}")
+66	    assert Latex.command("a", options=["b"], args=["c"]) == Latex(r"\a[b]{c}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:66:4
+65	    assert Latex.command("a", args=["b", "c"]) == Latex(r"\a{b}{c}")
+66	    assert Latex.command("a", options=["b"], args=["c"]) == Latex(r"\a[b]{c}")
+67	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:70:4
+69	def test_environment() -> None:
+70	    assert Latex.environment("a") == Latex(r"\begin{a} \end{a}")
+71	    assert Latex.environment("a", options=[]) == Latex(r"\begin{a} \end{a}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:71:4
+70	    assert Latex.environment("a") == Latex(r"\begin{a} \end{a}")
+71	    assert Latex.environment("a", options=[]) == Latex(r"\begin{a} \end{a}")
+72	    assert Latex.environment("a", options=["b"]) == Latex(r"\begin{a}[b] \end{a}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:72:4
+71	    assert Latex.environment("a", options=[]) == Latex(r"\begin{a} \end{a}")
+72	    assert Latex.environment("a", options=["b"]) == Latex(r"\begin{a}[b] \end{a}")
+73	    assert Latex.environment("a", options=[Latex("b")]) == Latex(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:73:4
+72	    assert Latex.environment("a", options=["b"]) == Latex(r"\begin{a}[b] \end{a}")
+73	    assert Latex.environment("a", options=[Latex("b")]) == Latex(
+74	        r"\begin{a}[b] \end{a}"
+75	    )
+76	    assert Latex.environment("a", options=["b", "c"]) == Latex(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:76:4
+75	    )
+76	    assert Latex.environment("a", options=["b", "c"]) == Latex(
+77	        r"\begin{a}[b][c] \end{a}"
+78	    )
+79	    assert Latex.environment("a", args=[]) == Latex(r"\begin{a} \end{a}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:79:4
+78	    )
+79	    assert Latex.environment("a", args=[]) == Latex(r"\begin{a} \end{a}")
+80	    assert Latex.environment("a", args=["b"]) == Latex(r"\begin{a}{b} \end{a}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:80:4
+79	    assert Latex.environment("a", args=[]) == Latex(r"\begin{a} \end{a}")
+80	    assert Latex.environment("a", args=["b"]) == Latex(r"\begin{a}{b} \end{a}")
+81	    assert Latex.environment("a", args=[Latex("b")]) == Latex(r"\begin{a}{b} \end{a}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:81:4
+80	    assert Latex.environment("a", args=["b"]) == Latex(r"\begin{a}{b} \end{a}")
+81	    assert Latex.environment("a", args=[Latex("b")]) == Latex(r"\begin{a}{b} \end{a}")
+82	    assert Latex.environment("a", args=["b", "c"]) == Latex(r"\begin{a}{b}{c} \end{a}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:82:4
+81	    assert Latex.environment("a", args=[Latex("b")]) == Latex(r"\begin{a}{b} \end{a}")
+82	    assert Latex.environment("a", args=["b", "c"]) == Latex(r"\begin{a}{b}{c} \end{a}")
+83	    assert Latex.environment("a", content="b") == Latex(r"\begin{a} b \end{a}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:83:4
+82	    assert Latex.environment("a", args=["b", "c"]) == Latex(r"\begin{a}{b}{c} \end{a}")
+83	    assert Latex.environment("a", content="b") == Latex(r"\begin{a} b \end{a}")
+84	    assert Latex.environment("a", content=Latex("b")) == Latex(r"\begin{a} b \end{a}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:84:4
+83	    assert Latex.environment("a", content="b") == Latex(r"\begin{a} b \end{a}")
+84	    assert Latex.environment("a", content=Latex("b")) == Latex(r"\begin{a} b \end{a}")
+85	    assert Latex.environment("a", options=["b"], args=["c"]) == Latex(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:85:4
+84	    assert Latex.environment("a", content=Latex("b")) == Latex(r"\begin{a} b \end{a}")
+85	    assert Latex.environment("a", options=["b"], args=["c"]) == Latex(
+86	        r"\begin{a}[b]{c} \end{a}"
+87	    )
+88	    assert Latex.environment("a", options=["b"], content="c") == Latex(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:88:4
+87	    )
+88	    assert Latex.environment("a", options=["b"], content="c") == Latex(
+89	        r"\begin{a}[b] c \end{a}"
+90	    )
+91	    assert Latex.environment("a", args=["b"], content="c") == Latex(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:91:4
+90	    )
+91	    assert Latex.environment("a", args=["b"], content="c") == Latex(
+92	        r"\begin{a}{b} c \end{a}"
+93	    )
+94	    assert Latex.environment("a", options=["b"], args=["c"], content="d") == Latex(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:94:4
+93	    )
+94	    assert Latex.environment("a", options=["b"], args=["c"], content="d") == Latex(
+95	        r"\begin{a}[b]{c} d \end{a}"
+96	    )
+97	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:100:4
+99	def test_join() -> None:
+100	    assert Latex.join(":", []) == Latex("")
+101	    assert Latex.join(":", ["foo"]) == Latex("foo")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:101:4
+100	    assert Latex.join(":", []) == Latex("")
+101	    assert Latex.join(":", ["foo"]) == Latex("foo")
+102	    assert Latex.join(":", [Latex("foo")]) == Latex("foo")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:102:4
+101	    assert Latex.join(":", ["foo"]) == Latex("foo")
+102	    assert Latex.join(":", [Latex("foo")]) == Latex("foo")
+103	    assert Latex.join(":", [Latex("foo"), "bar"]) == Latex("foo:bar")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:103:4
+102	    assert Latex.join(":", [Latex("foo")]) == Latex("foo")
+103	    assert Latex.join(":", [Latex("foo"), "bar"]) == Latex("foo:bar")
+104	    assert Latex.join(":", ["foo", Latex("bar")]) == Latex("foo:bar")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:104:4
+103	    assert Latex.join(":", [Latex("foo"), "bar"]) == Latex("foo:bar")
+104	    assert Latex.join(":", ["foo", Latex("bar")]) == Latex("foo:bar")
+105	    assert Latex.join(":", [Latex("foo"), Latex("bar")]) == Latex("foo:bar")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:105:4
+104	    assert Latex.join(":", ["foo", Latex("bar")]) == Latex("foo:bar")
+105	    assert Latex.join(":", [Latex("foo"), Latex("bar")]) == Latex("foo:bar")
+106	    assert Latex.join(":", ()) == Latex("")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:106:4
+105	    assert Latex.join(":", [Latex("foo"), Latex("bar")]) == Latex("foo:bar")
+106	    assert Latex.join(":", ()) == Latex("")
+107	    assert Latex.join(":", ("foo",)) == Latex("foo")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:107:4
+106	    assert Latex.join(":", ()) == Latex("")
+107	    assert Latex.join(":", ("foo",)) == Latex("foo")
+108	    assert Latex.join(":", (Latex("foo"),)) == Latex("foo")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:108:4
+107	    assert Latex.join(":", ("foo",)) == Latex("foo")
+108	    assert Latex.join(":", (Latex("foo"),)) == Latex("foo")
+109	    assert Latex.join(":", (Latex("foo"), "bar")) == Latex("foo:bar")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:109:4
+108	    assert Latex.join(":", (Latex("foo"),)) == Latex("foo")
+109	    assert Latex.join(":", (Latex("foo"), "bar")) == Latex("foo:bar")
+110	    assert Latex.join(":", ("foo", Latex("bar"))) == Latex("foo:bar")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:110:4
+109	    assert Latex.join(":", (Latex("foo"), "bar")) == Latex("foo:bar")
+110	    assert Latex.join(":", ("foo", Latex("bar"))) == Latex("foo:bar")
+111	    assert Latex.join(":", (Latex("foo"), Latex("bar"))) == Latex("foo:bar")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:111:4
+110	    assert Latex.join(":", ("foo", Latex("bar"))) == Latex("foo:bar")
+111	    assert Latex.join(":", (Latex("foo"), Latex("bar"))) == Latex("foo:bar")
+112	    assert Latex.join(":", (str(x) for x in range(3))) == Latex("0:1:2")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:112:4
+111	    assert Latex.join(":", (Latex("foo"), Latex("bar"))) == Latex("foo:bar")
+112	    assert Latex.join(":", (str(x) for x in range(3))) == Latex("0:1:2")
+113	    assert Latex.join(":", (Latex(str(x)) for x in range(3))) == Latex("0:1:2")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/codegen/latex_test.py:113:4
+112	    assert Latex.join(":", (str(x) for x in range(3))) == Latex("0:1:2")
+113	    assert Latex.join(":", (Latex(str(x)) for x in range(3))) == Latex("0:1:2")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:17:4
+16	
+17	    assert frontend.get_latex(myfn) == latex_without_flag
+18	    assert frontend.get_latex(myfn, identifiers=identifiers) == latex_with_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:18:4
+17	    assert frontend.get_latex(myfn) == latex_without_flag
+18	    assert frontend.get_latex(myfn, identifiers=identifiers) == latex_with_flag
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:33:4
+32	
+33	    assert frontend.get_latex(f) == latex_without_flag
+34	    assert frontend.get_latex(f, prefixes=set()) == latex_without_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:34:4
+33	    assert frontend.get_latex(f) == latex_without_flag
+34	    assert frontend.get_latex(f, prefixes=set()) == latex_without_flag
+35	    assert frontend.get_latex(f, prefixes={"abc"}) == latex_with_flag1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:35:4
+34	    assert frontend.get_latex(f, prefixes=set()) == latex_without_flag
+35	    assert frontend.get_latex(f, prefixes={"abc"}) == latex_with_flag1
+36	    assert frontend.get_latex(f, prefixes={"x"}) == latex_with_flag2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:36:4
+35	    assert frontend.get_latex(f, prefixes={"abc"}) == latex_with_flag1
+36	    assert frontend.get_latex(f, prefixes={"x"}) == latex_with_flag2
+37	    assert frontend.get_latex(f, prefixes={"x.y"}) == latex_with_flag3
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:37:4
+36	    assert frontend.get_latex(f, prefixes={"x"}) == latex_with_flag2
+37	    assert frontend.get_latex(f, prefixes={"x.y"}) == latex_with_flag3
+38	    assert frontend.get_latex(f, prefixes={"abc", "x.y.z"}) == latex_with_flag4
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:38:4
+37	    assert frontend.get_latex(f, prefixes={"x.y"}) == latex_with_flag3
+38	    assert frontend.get_latex(f, prefixes={"abc", "x.y.z"}) == latex_with_flag4
+39	    assert frontend.get_latex(f, prefixes={"abc", "x", "x.y.z"}) == latex_with_flag4
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:39:4
+38	    assert frontend.get_latex(f, prefixes={"abc", "x.y.z"}) == latex_with_flag4
+39	    assert frontend.get_latex(f, prefixes={"abc", "x", "x.y.z"}) == latex_with_flag4
+40	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:50:4
+49	
+50	    assert frontend.get_latex(f) == latex_without_flag
+51	    assert frontend.get_latex(f, reduce_assignments=False) == latex_without_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:51:4
+50	    assert frontend.get_latex(f) == latex_without_flag
+51	    assert frontend.get_latex(f, reduce_assignments=False) == latex_without_flag
+52	    assert frontend.get_latex(f, reduce_assignments=True) == latex_with_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:52:4
+51	    assert frontend.get_latex(f, reduce_assignments=False) == latex_without_flag
+52	    assert frontend.get_latex(f, reduce_assignments=True) == latex_with_flag
+53	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:62:4
+61	
+62	    assert frontend.get_latex(f) == latex_without_flag
+63	    assert frontend.get_latex(f, use_math_symbols=False) == latex_without_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:63:4
+62	    assert frontend.get_latex(f) == latex_without_flag
+63	    assert frontend.get_latex(f, use_math_symbols=False) == latex_without_flag
+64	    assert frontend.get_latex(f, use_math_symbols=True) == latex_with_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:64:4
+63	    assert frontend.get_latex(f, use_math_symbols=False) == latex_without_flag
+64	    assert frontend.get_latex(f, use_math_symbols=True) == latex_with_flag
+65	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:74:4
+73	
+74	    assert frontend.get_latex(f) == latex_with_flag
+75	    assert frontend.get_latex(f, use_signature=False) == latex_without_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:75:4
+74	    assert frontend.get_latex(f) == latex_with_flag
+75	    assert frontend.get_latex(f, use_signature=False) == latex_without_flag
+76	    assert frontend.get_latex(f, use_signature=True) == latex_with_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:76:4
+75	    assert frontend.get_latex(f, use_signature=False) == latex_without_flag
+76	    assert frontend.get_latex(f, use_signature=True) == latex_with_flag
+77	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:86:4
+85	
+86	    assert frontend.get_latex(f) == latex_without_flag
+87	    assert frontend.get_latex(f, use_set_symbols=False) == latex_without_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:87:4
+86	    assert frontend.get_latex(f) == latex_without_flag
+87	    assert frontend.get_latex(f, use_set_symbols=False) == latex_without_flag
+88	    assert frontend.get_latex(f, use_set_symbols=True) == latex_with_flag
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:88:4
+87	    assert frontend.get_latex(f, use_set_symbols=False) == latex_without_flag
+88	    assert frontend.get_latex(f, use_set_symbols=True) == latex_with_flag
+89	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:103:4
+102	    latexified = frontend.function(f)
+103	    assert str(latexified) == latex_with_flag
+104	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_with_flag} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:104:4
+103	    assert str(latexified) == latex_with_flag
+104	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_with_flag} $$"
+105	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:111:4
+110	    latexified = frontend.function(use_signature=False)(f)
+111	    assert str(latexified) == latex_without_flag
+112	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_without_flag} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:112:4
+111	    assert str(latexified) == latex_without_flag
+112	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_without_flag} $$"
+113	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:119:4
+118	    latexified = frontend.function(f, use_signature=False)
+119	    assert str(latexified) == latex_without_flag
+120	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_without_flag} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:120:4
+119	    assert str(latexified) == latex_without_flag
+120	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_without_flag} $$"
+121	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:135:4
+134	    latexified = frontend.expression(f)
+135	    assert str(latexified) == latex_without_flag
+136	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_without_flag} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:136:4
+135	    assert str(latexified) == latex_without_flag
+136	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_without_flag} $$"
+137	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:143:4
+142	    latexified = frontend.expression(use_signature=True)(f)
+143	    assert str(latexified) == latex_with_flag
+144	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_with_flag} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:144:4
+143	    assert str(latexified) == latex_with_flag
+144	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_with_flag} $$"
+145	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:151:4
+150	    latexified = frontend.expression(f, use_signature=True)
+151	    assert str(latexified) == latex_with_flag
+152	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_with_flag} $$"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/frontend_test.py:152:4
+151	    assert str(latexified) == latex_with_flag
+152	    assert latexified._repr_latex_() == rf"$$ \displaystyle {latex_with_flag} $$"
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with dill module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b403-import-pickle
+   Location: ./latexify_py/src/latexify/parser.py:11:0
+10	
+11	import dill  # type: ignore[import]
+12	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/test_utils.py:75:8
+74	    try:
+75	        assert type(observed) is type(expected)
+76	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/test_utils.py:81:16
+80	            if isinstance(ve, ast.AST):
+81	                assert ast_equal(cast(ast.AST, vo), ve)
+82	            elif isinstance(ve, list):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/test_utils.py:84:16
+83	                vo = cast(list, vo)
+84	                assert len(vo) == len(ve)
+85	                assert all(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/test_utils.py:85:16
+84	                assert len(vo) == len(ve)
+85	                assert all(
+86	                    ast_equal(cast(ast.AST, co), cast(ast.AST, ce))
+87	                    for co, ce in zip(vo, ve)
+88	                )
+89	            else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/test_utils.py:90:16
+89	            else:
+90	                assert type(vo) is type(ve)
+91	                assert vo == ve
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/test_utils.py:91:16
+90	                assert type(vo) is type(ve)
+91	                assert vo == ve
+92	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/test_utils.py:110:8
+109	    if sys.version_info.minor >= 9:
+110	        assert ast_equal(
+111	            observed, expected
+112	        ), f"""\
+113	AST does not match.
+114	observed={ast.dump(observed, indent=4)}
+115	expected={ast.dump(expected, indent=4)}
+116	"""
+117	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b101_assert_used.html
+   Location: ./latexify_py/src/latexify/test_utils.py:118:8
+117	    else:
+118	        assert ast_equal(
+119	            observed, expected
+120	        ), f"""\
+121	AST does not match.
+122	observed={ast.dump(observed)}
+123	expected={ast.dump(expected)}
+124	"""
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 3927
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 174
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 174
+Files skipped (0):
